@@ -8,7 +8,8 @@ import { HeaderComponent } from "./components/header/header.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, HeaderComponent]
+    imports: [CommonModule, RouterOutlet, HeaderComponent],
+    
 })
 export class AppComponent {
   title = 'Town-cube';

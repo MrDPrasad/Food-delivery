@@ -9,6 +9,7 @@ import { FoodService } from '../../../services/food.service';
 })
 export class HomeComponent implements OnInit {
   food: Food[] = []; // Updated property name
+foods: any;
 
   constructor(private api: FoodService) {
     this.food = api.getAll();

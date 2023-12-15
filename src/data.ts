@@ -91,7 +91,7 @@ export const sample_foods: Food[] = [
   },
 ]
 
-export const sample_tags:shared.Tag[] = [
+export const sample_tags:Shared.Tag[] = [
   { name: 'All', count: 8 },
   { name: 'FastFood', count: 4 },
   { name: 'Pizza', count: 3 },
