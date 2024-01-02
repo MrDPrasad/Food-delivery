@@ -18,7 +18,10 @@ export class FooPageComponent implements OnInit {
   constructor(activatedRoute:ActivatedRoute, private api:FoodService, private cartService:CartService, private router: Router){
     activatedRoute.params.subscribe((params) => {
       if(params.id)
-      this.food = api.getFoodById(params.id);
+      api.getFoodById(params.id).subscribe(serverFood=>{
+    this.food = serverFood;
+    })
+    
 
     })
   }

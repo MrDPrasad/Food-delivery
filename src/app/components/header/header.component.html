@@ -4,21 +4,21 @@
     <a routerLink="/" class="logo">Chai Monk</a>
     <nav>
       <ul>
-        <li>
+        <li *ngIf="isAuth">
           <a href="#">Login</a>
         </li>
-        <li class="menu-con">
-          <a routerLink="/dashboard" class="menu-trigger">chai <span>&#9662;</span></a>
+        <li *ngIf="isAuth" class="menu-container">
+          <a routerLink="/dashboard">{{user.name}}</a>
           <div class="menu">
-            <ul>
-              <li><a routerLink="/Profile">PROFILE</a></li>
-              <li><a routerLink="/order">order</a></li>
-              <li><a routerLink="/login">logout</a></li>
-            </ul>
+            
+              <a routerLink="/Profile">Profile</a>
+              <a routerLink="/order">order</a>
+              <a (click)="logout()">logout</a>
+            
           </div>
         </li>
         <li>
-          <a routerLink="/cart">cart</a>
+          <a routerLink="/cart-page">Cart <span *ngIf="cartQuantity">{{cartQuantity}}</span></a>
         </li>
       </ul>
     </nav>

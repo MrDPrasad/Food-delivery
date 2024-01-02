@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../../services/food.service';
 import { Food } from '../../shared/food';
+import { CartService } from '../../services/cart.service';
+import { UserService } from '../../services/user.service';
+import { user } from '../../shared/constants/user';
 
 
 @Component({
@@ -11,13 +14,28 @@ import { Food } from '../../shared/food';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
-  foods:Food[] =[];
+  cartQuantity=0;
+  user!:user
 
-  constructor(private api:FoodService){
-    this.foods =api.getAll() //getAll datareturn
+  constructor(cartService:CartService, private userService:UserService){
+    cartService.getcartobservable().subscribe((newCart)=>{
+      this.cartQuantity = newCart.totalcount;
+    })
+    userService.userObservable.subscribe((newUser)=>{
+      this.user=newUser;
+    })
+
   }
 
 
-  ngOnInit(){}
+  ngOnInit(): void {
+
+  }
+  logout(){
+    this.userService.logout();
+  }
+  get isAuth(){
+    return this.user.token;
+  }
 
 }
