@@ -8,6 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './search.component.css'
 })
 export class SearchComponent implements OnInit {
+search(arg0: string) {
+throw new Error('Method not implemented.');
+}
 
 
   searchTerm=''

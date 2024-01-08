@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "strict": true,
+        "outDir": "./buit",
+        "experimentalDecoratorMetadata": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true
+    },
+    "include": ["src/**/*"],
+}
